@@ -31,6 +31,7 @@ const TitleWrapper = styled.div`
   align-items: center;
   height: 60px;
   width: 50%;
+  padding: 0 20px;
 `
 
 const Title = styled.h1`

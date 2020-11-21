@@ -12,11 +12,37 @@ const Index: React.FC = props => {
         <Title>
           副業を募集しよう
         </Title>
-        <Image src={'/top_image.png'} width={250} height={200} />
+        <ImageWrapper>
+          <Image src={'/top_image.png'} width={250} height={200} />
+        </ImageWrapper>
         <ButtonWrapper>
           <Button text="募集する" size="medium" onClick={() => {}} />
         </ButtonWrapper>
       </MainWrapper>
+      <DescriptionWrapper>
+        <SubTitle>
+          説明説明説明
+        </SubTitle>
+        <Paragraph>
+          ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+        </Paragraph>
+      </DescriptionWrapper>
+      <DescriptionWrapper>
+        <SubTitle>
+          説明説明説明
+        </SubTitle>
+        <Paragraph>
+          ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+        </Paragraph>
+      </DescriptionWrapper>
+      <DescriptionWrapper>
+        <SubTitle>
+          説明説明説明
+        </SubTitle>
+        <Paragraph>
+          ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+        </Paragraph>
+      </DescriptionWrapper>
     </Wrapper>
   )
 }
@@ -24,24 +50,45 @@ const Index: React.FC = props => {
 export default Index
 
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  border-right: 1px solid ${COLOR.BASE_BORDER_COLOR};
-  border-left: 1px solid ${COLOR.BASE_BORDER_COLOR};
+  box-shadow: ${COLOR.BOX_SHADOW_SIDE};
 `
 
 const MainWrapper = styled.div`
-  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 0 30px;
 `
 
 const Title = styled.h2`
+  padding-bottom: 20px;
   color: ${COLOR.BASE_TEXT};
   font-size: ${FONT_SIZE.FS_30};
-  padding-bottom: 20px;
+  text-align: center;
+`
+
+const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 30px;
+`
+
+const DescriptionWrapper = styled.div`
+  margin: 30px 0;
+  padding: 30px;
+`
+
+const SubTitle = styled.h3`
+  color: ${COLOR.BASE_TEXT};
+  font-size: ${FONT_SIZE.FS_20};
+`
+
+const Paragraph = styled.p`
+  color: ${COLOR.BASE_TEXT};
+  font-size: ${FONT_SIZE.BASE_TEXT_SIZE};
 `

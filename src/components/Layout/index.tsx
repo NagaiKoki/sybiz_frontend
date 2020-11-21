@@ -3,14 +3,24 @@ import styled from 'styled-components'
 // import components
 import Header from './Header'
 
-const Layout: React.FC = () => {
+const Layout: React.FC = props => {
+  const { children } = props
   return (
-    <Wrapper>
+    <Container>
       <Header />
-    </Wrapper>
+      <Wrapper>
+        {children}
+      </Wrapper>
+    </Container>
   )
 }
 
 export default Layout
 
-const Wrapper = styled.div``
+const Container = styled.div`
+`
+
+const Wrapper = styled.div`
+  width: 50%;
+  margin: 0 auto;
+`

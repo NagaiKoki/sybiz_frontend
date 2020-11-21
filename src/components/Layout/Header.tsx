@@ -10,7 +10,7 @@ const Header: React.FC = () => {
     <Wrapper>
       <TitleWrapper>
         <Title>Title</Title>
-        <Button text="登録する" onClick={() => {}} />
+        <Button text="登録する" size="small" onClick={() => {}} />
       </TitleWrapper>
     </Wrapper>
   )

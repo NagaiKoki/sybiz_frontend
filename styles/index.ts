@@ -1,5 +1,6 @@
 export const COLOR = {
   MAIN_COLOR: '#66cc33',
+  BASE_TEXT: '#393939',
   WHITE_COLOR: '#fff',
   BASE_BORDER_COLOR: '#e8e8e8',
   BOX_SHADOW_UNDER: 'rgba(0, 0, 0, 0.03) 0px 5px 5px;'
@@ -20,4 +21,11 @@ export const FONT_SIZE = {
   FS_21: '21px',
   FS_22: '22px',
   FS_23: '23px',
+  FS_24: '24px',
+  FS_25: '25px',
+  FS_26: '26px',
+  FS_27: '27px',
+  FS_28: '28px',
+  FS_29: '29px',
+  FS_30: '30px',
 }

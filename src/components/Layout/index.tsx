@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 // import components
 import Header from './Header'
+import Footer from './Footer'
 
 const Layout: React.FC = props => {
   const { children } = props
@@ -10,6 +11,7 @@ const Layout: React.FC = props => {
       <Header />
       <Wrapper>
         {children}
+        <Footer />
       </Wrapper>
     </Container>
   )

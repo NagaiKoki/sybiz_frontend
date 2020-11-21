@@ -29,13 +29,13 @@ const Button: React.FC<Props> = props => {
       case 'medium': {
         return {
           fontSize: FONT_SIZE.FS_18,
-          padding: '7px 20px'
+          padding: '7px 25px'
         }
       }
       case 'large': {
         return {
-          fontSize: FONT_SIZE.BASE_TEXT_SIZE,
-          padding: '7px 15px'
+          fontSize: FONT_SIZE.FS_20,
+          padding: '7px 30px'
         }
       }
       default:
@@ -49,7 +49,6 @@ const Button: React.FC<Props> = props => {
   return (
     <Wrapper onClick={onClick} styles={buttonStyles()}>
       {text}
-      
     </Wrapper>
   )
 }

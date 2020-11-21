@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
 export default Footer
 
 const Wrapper = styled.footer`
-  margin-top: 20px;
+  margin-top: 50px;
   border-top: 1px solid ${COLOR.BASE_BORDER_COLOR};
   padding: 20px 10px;
 `

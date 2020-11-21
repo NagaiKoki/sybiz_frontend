@@ -26,6 +26,8 @@ export default Index
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  border-right: 1px solid ${COLOR.BASE_BORDER_COLOR};
+  border-left: 1px solid ${COLOR.BASE_BORDER_COLOR};
 `
 
 const MainWrapper = styled.div`

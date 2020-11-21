@@ -1,65 +1,94 @@
-import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
+import styled from 'styled-components'
+import Image from 'next/image'
+// import styles
+import { COLOR, FONT_SIZE } from '../../styles'
+// import components
+import Button from '../components/common/Button'
 
-export default function Home() {
+const Index: React.FC = props => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <Wrapper>
+      <MainWrapper>
+        <Title>
+          副業を募集しよう
+        </Title>
+        <ImageWrapper>
+          <Image src={'/top_image.png'} width={250} height={200} />
+        </ImageWrapper>
+        <ButtonWrapper>
+          <Button text="募集する" size="medium" onClick={() => {}} />
+        </ButtonWrapper>
+      </MainWrapper>
+      <DescriptionWrapper>
+        <SubTitle>
+          説明説明説明
+        </SubTitle>
+        <Paragraph>
+          ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+        </Paragraph>
+      </DescriptionWrapper>
+      <DescriptionWrapper>
+        <SubTitle>
+          説明説明説明
+        </SubTitle>
+        <Paragraph>
+          ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+        </Paragraph>
+      </DescriptionWrapper>
+      <DescriptionWrapper>
+        <SubTitle>
+          説明説明説明
+        </SubTitle>
+        <Paragraph>
+          ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+        </Paragraph>
+      </DescriptionWrapper>
+    </Wrapper>
   )
 }
+
+export default Index
+
+const Wrapper = styled.div`
+  box-shadow: ${COLOR.BOX_SHADOW_SIDE};
+`
+
+const MainWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 0 30px;
+`
+
+const Title = styled.h2`
+  padding-bottom: 20px;
+  color: ${COLOR.BASE_TEXT};
+  font-size: ${FONT_SIZE.FS_30};
+  text-align: center;
+`
+
+const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+`
+
+const DescriptionWrapper = styled.div`
+  margin: 30px 0;
+  padding: 30px;
+`
+
+const SubTitle = styled.h3`
+  color: ${COLOR.BASE_TEXT};
+  font-size: ${FONT_SIZE.FS_20};
+`
+
+const Paragraph = styled.p`
+  color: ${COLOR.BASE_TEXT};
+  font-size: ${FONT_SIZE.BASE_TEXT_SIZE};
+`

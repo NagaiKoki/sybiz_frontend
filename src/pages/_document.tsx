@@ -17,6 +17,7 @@ export default class AppDocument extends Document {
           <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
           <Main />
           <NextScript />
+          <div id="create-modal-element" />
         </body>
       </html>
     )

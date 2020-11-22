@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 // import commponents
 import Modal from '../common/Modal'
+import TwitterButton from '../common/Button/TwitterButton'
 // import selectors
 import { useAuthModalOpen } from '../../selectors/ui'
 // / import dispatchers
@@ -15,7 +16,7 @@ const SignInModal: React.FC = props => {
     authModalOpen &&
     <Modal onClose={toggleAuthModalOpen}>
       <Wrapper>
-        Twitterでログインする
+        <TwitterButton text="Twitterでログインする" onClick={() => {}} />
       </Wrapper>
     </Modal>
   )

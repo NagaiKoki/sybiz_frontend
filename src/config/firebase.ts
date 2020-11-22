@@ -11,6 +11,9 @@ const config = {
   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 }
 
+export const twitterProvider = new firebase.auth.TwitterAuthProvider()
+export const db = firebase.firestore()
+
 if (!firebase.apps.length) {
   firebase.initializeApp(config)
 }

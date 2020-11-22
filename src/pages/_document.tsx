@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 export default class AppDocument extends Document {
   static async getInitialProps(ctx) {
@@ -8,7 +8,7 @@ export default class AppDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html lang="ja">
         <Head>
           <meta name="viewport" content="width=device-width,initial-scale=1" />
         </Head>
@@ -19,7 +19,7 @@ export default class AppDocument extends Document {
           <NextScript />
           <div id="create-modal-element" />
         </body>
-      </html>
+      </Html>
     )
   }
 }

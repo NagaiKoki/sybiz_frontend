@@ -1,4 +1,6 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -11,11 +13,12 @@ const config = {
   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 }
 
-export const twitterProvider = new firebase.auth.TwitterAuthProvider()
-export const db = firebase.firestore()
-
 if (!firebase.apps.length) {
   firebase.initializeApp(config)
+} else {
+  firebase.app()
 }
+
+export const db = firebase.firestore()
 
 export default firebase

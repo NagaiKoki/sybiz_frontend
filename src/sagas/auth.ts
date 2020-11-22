@@ -13,22 +13,22 @@ import { RequestSignInType } from '../types/auth'
 import { ResponseType } from '../types'
 
 function* runRequestSignIn(action: PayloadAction<RequestSignInType>) {
-  const { payload, error }: ResponseType<any> = call(
+  const { payload, error }: ResponseType<any> = yield call(
     requestFetchSignIn,
     action.payload.type
   )
 
   if (payload && !error) {
-    put(successSignIn())
+    yield put(successSignIn())
   } else {
-    put(failureSignIn(error))
+    yield put(failureSignIn(error))
   }
 }
 
 function* handleRequestSignIn() {
-  takeEvery(requestSignIn.type, runRequestSignIn)
+  yield takeEvery(requestSignIn.type, runRequestSignIn)
 }
 
 export default function* authSaga() {
-  fork(handleRequestSignIn)
+  yield fork(handleRequestSignIn)
 }

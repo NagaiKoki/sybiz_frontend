@@ -1,12 +1,11 @@
-import firebase, { twitterProvider } from '../config/firebase'
+import firebase from '../config/firebase'
 // import types
 import { SignInType } from '../types/auth'
 
 export const requestFetchSignIn = async (type: SignInType) => {
   try {
-    firebase.auth().signInWithRedirect(twitterProvider)
-    const result = await firebase.auth().getRedirectResult()
-    console.log(result)
+    const provider = new firebase.auth.TwitterAuthProvider();
+    await firebase.auth().signInWithPopup(provider);
   } catch(error) {
     return { error }
   }

@@ -5,9 +5,9 @@ import { requestSignIn } from '../slices/auth'
 // import types
 import { RequestSignInType } from '../types/auth'
 
-export const useRequestSignIn = () => {
+export const useAuthDispatchers = () => {
   const dispatch = useDispatch()
-  const _requestSignIn = useCallback((arg: RequestSignInType) => requestSignIn(arg), [dispatch])
+  const _requestSignIn = useCallback((arg: RequestSignInType) => dispatch(requestSignIn(arg)), [dispatch])
 
   return {
     requestSignIn: _requestSignIn

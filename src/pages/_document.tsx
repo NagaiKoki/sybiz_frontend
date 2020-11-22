@@ -10,10 +10,10 @@ export default class AppDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
         </Head>
         <body>
           <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
           <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
           <Main />
           <NextScript />

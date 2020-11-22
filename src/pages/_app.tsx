@@ -6,9 +6,9 @@ import store from '../slices/store'
 import Layout from '../components/Layout'
 import '../../styles/globals.css'
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps) => {  
   return (
-    <Provider store={store()}>
+    <Provider store={store}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

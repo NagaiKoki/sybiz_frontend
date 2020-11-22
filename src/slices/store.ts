@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import createSagaMiddleware from 'redux-saga';
 // import slices
 import uiSlice from './ui'
 import authSlice from './auth'
 // import types
 import { UiState } from '../types/ui'
 import { AuthState } from '../types/auth'
+// import sagas
+import rootSaga from '../sagas'
 
 export interface AppState {
   ui: UiState
@@ -16,15 +19,16 @@ const rootReducer = combineReducers({
   ui: uiSlice.reducer,
   auth: authSlice.reducer
 })
+const sagaMiddleware = createSagaMiddleware()
 
-const middlewareList = [...getDefaultMiddleware()];
+const middlewareList = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
 
-const createStore = () => {
-  return configureStore({
-    reducer: rootReducer,
-    middleware: middlewareList,
-    devTools: process.env.NODE_ENV !== 'production'
-  })
-}
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: middlewareList,
+  devTools: process.env.NODE_ENV !== 'production',
+})
 
-export default createStore
+sagaMiddleware.run(rootSaga);
+
+export default store

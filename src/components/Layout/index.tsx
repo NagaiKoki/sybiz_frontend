@@ -3,9 +3,11 @@ import styled from 'styled-components'
 // import components
 import Header from './Header'
 import Footer from './Footer'
+import Modal from '../Auth/SignInModal'
 
 const Layout: React.FC = props => {
   const { children } = props
+
   return (
     <Container>
       <Header />
@@ -13,6 +15,7 @@ const Layout: React.FC = props => {
         {children}
         <Footer />
       </Wrapper>
+      <Modal />
     </Container>
   )
 }

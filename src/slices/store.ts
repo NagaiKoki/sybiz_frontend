@@ -15,10 +15,12 @@ const rootReducer = combineReducers({
 
 const middlewareList = [...getDefaultMiddleware()];
 
-export const createStore = () => {
+const createStore = () => {
   return configureStore({
     reducer: rootReducer,
     middleware: middlewareList,
     devTools: process.env.NODE_ENV !== 'production'
   })
 }
+
+export default createStore

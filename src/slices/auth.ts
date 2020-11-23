@@ -13,6 +13,12 @@ const authSlice = createSlice({
   name: AUTH,
   initialState,
   reducers: {
+    setLoginStatus: (state, action: PayloadAction<boolean>) => {
+      return {
+        ...state,
+        isLoggedIn: action.payload
+      }
+    },
     requestSignIn: (state, action: PayloadAction<RequestSignInType>) => {
       return state
     },
@@ -27,13 +33,14 @@ const authSlice = createSlice({
         ...state,
         error: action.payload
       }
-    } 
+    }
   }
 })
 
 export default authSlice
 
 export const {
+  setLoginStatus,
   requestSignIn,
   successSignIn,
   failureSignIn

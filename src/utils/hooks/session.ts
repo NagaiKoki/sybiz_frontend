@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+// import config
 import firebase from '../../config/firebase'
 
 export const useSessionCheck = () => {

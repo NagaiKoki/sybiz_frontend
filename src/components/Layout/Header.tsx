@@ -4,13 +4,17 @@ import styled from 'styled-components'
 import { COLOR } from '../../../styles'
 // import components
 import Button from '../../components/common/Button'
+// import dispatchers
+import { useUiDispatchers } from '../../dispatchers/ui'
 
 const Header: React.FC = () => {
+  const { toggleAuthModalOpen } = useUiDispatchers()
+
   return (
     <Wrapper>
       <TitleWrapper>
         <Title>Title</Title>
-        <Button text="登録する" size="small" onClick={() => {}} />
+        <Button text="登録する" size="small" onClick={toggleAuthModalOpen} />
       </TitleWrapper>
     </Wrapper>
   )
@@ -30,7 +34,7 @@ const TitleWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  width: 50%;
+  width: 600px;
   padding: 0 20px;
 `
 

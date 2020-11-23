@@ -31,6 +31,7 @@ export default TextInput
 const Input = styled.input`
   border: none;
   border-bottom: 1px solid ${COLOR.BASE_BORDER_COLOR};
+  width: 100%;
   padding: 10px;
 
   &:hover {

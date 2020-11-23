@@ -10,22 +10,20 @@ export const requestFetchSignIn = async (type: SignInType) => {
   try {
     const provider = new firebase.auth.TwitterAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
-    const { username, providerId } = result.additionalUserInfo
-    const userData = {
+    const { username, providerId, isNewUser } = result.additionalUserInfo
+    const user: UserType = {
       username,
+      userId: username,
       providerId,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       updatedAt: firebase.firestore.FieldValue.serverTimestamp()
     }
-    const user = await userRef.add(userData)
-    const payload: UserType = {
-      id: user.id,
-      ...userData
+
+    if (isNewUser) {
+      await userRef.add(user)
     }
-    
-    return { payload }
+    return { payload: user }
   } catch(error) {
     return { error }
   }
 }
-

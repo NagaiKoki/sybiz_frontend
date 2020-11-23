@@ -1,16 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
+// import styles
 import { COLOR, FONT_SIZE } from '../../styles'
+// import components
+import TextInput from '../components/common/Input/TextInput'
 
 const OnBoardingPage: React.FC = props => {
-
+console.log(props)
   return (
     <Wrapper>
       <Title>フクギョウへようこそ！</Title>
       <ImageWrapper>
         <Image src="/onBoarding.png" width={200} height={180} />
       </ImageWrapper>
+      <TextInput value="" placeholder="ユーザー名" onChange={() => {}} />
     </Wrapper>
   )
 }

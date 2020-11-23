@@ -24,7 +24,7 @@ function* runRequestSignIn(action: PayloadAction<RequestSignInType>) {
   if (payload && !error) {
     yield put(successSignIn())
     yield put(setLoginUser(payload))
-    yield call(Router.push, `/users/${payload.userId}`)
+    yield call(Router.push, `/onBoarding`)
   } else {
     yield put(failureSignIn(error))
   }

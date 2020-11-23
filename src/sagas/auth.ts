@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import { PayloadAction } from '@reduxjs/toolkit'
 import { put, call, fork, takeEvery } from 'redux-saga/effects'
 // import apis
@@ -23,6 +24,7 @@ function* runRequestSignIn(action: PayloadAction<RequestSignInType>) {
   if (payload && !error) {
     yield put(successSignIn())
     yield put(setLoginUser(payload))
+    yield call(Router.push, `/users/${payload.userId}`)
   } else {
     yield put(failureSignIn(error))
   }

@@ -6,23 +6,12 @@ import Image from 'next/image'
 import { COLOR, FONT_SIZE } from '../../styles'
 // import components
 import Button from '../components/common/Button'
-// import selectors
-import { useSelectLoginUser } from '../selectors/public/user'
 // import dispatchers
 import { useUiDispatchers } from '../dispatchers/ui'
 
-const Index: React.FC = props => {
-  const router = useRouter()
+const Index: React.FC = props => { 
   const { toggleAuthModalOpen } = useUiDispatchers()
-  const loginUser = useSelectLoginUser()
-
-  useEffect(() => {
-    if (loginUser) {
-      toggleAuthModalOpen()
-      router.push({ pathname: '/users/[uid]', query: { uid: loginUser.userId } })
-    }
-  }, [loginUser])
-
+  
   return (
     <Wrapper>
       <MainWrapper>

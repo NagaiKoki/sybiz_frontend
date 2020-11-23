@@ -4,20 +4,24 @@ import createSagaMiddleware from 'redux-saga';
 // import slices
 import uiSlice from './ui'
 import authSlice from './auth'
+import publicUserSlice from './public/user'
 // import types
 import { UiState } from '../types/ui'
 import { AuthState } from '../types/auth'
+import { PublicUserState } from '../types/public/user'
 // import sagas
 import rootSaga from '../sagas'
 
 export interface AppState {
   ui: UiState
   auth: AuthState
+  publicUser: PublicUserState
 }
 
 const rootReducer = combineReducers({
   ui: uiSlice.reducer,
-  auth: authSlice.reducer
+  auth: authSlice.reducer,
+  publicUser: publicUserSlice.reducer
 })
 const sagaMiddleware = createSagaMiddleware()
 

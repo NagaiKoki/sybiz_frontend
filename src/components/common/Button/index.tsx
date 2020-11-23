@@ -63,9 +63,8 @@ const Wrapper = styled.button<{ styles: ButtonStyles }>`
   font-weight: bold;
   text-align: center;
   padding: ${props => props.styles.padding};
+  box-shadow: ${COLOR.BOX_SHADOW_BUTTON};
   &:hover {
     opacity: 0.5;
   }
 `
-
-const Icon = styled.i``

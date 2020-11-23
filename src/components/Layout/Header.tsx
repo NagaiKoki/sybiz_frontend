@@ -34,7 +34,7 @@ const TitleWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  width: 50%;
+  width: 40%;
   padding: 0 20px;
 `
 

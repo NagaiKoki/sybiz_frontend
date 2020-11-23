@@ -6,6 +6,7 @@ export const COLOR = {
   TWITTER_COLOR: '#1DA1F2',
   BOX_SHADOW_UNDER: 'rgba(0, 0, 0, 0.03) 0px 5px 5px;',
   BOX_SHADOW_SIDE: '8px 0 9px -4px rgba(0, 0, 0, 0.03), -8px 0 9px -4px rgba(0, 0, 0, 0.03);',
+  BOX_SHADOW_BUTTON: '0 3px 6px -2px rgba(100,110,167,.2)',
 }
 
 export const FONT_SIZE = {

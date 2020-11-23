@@ -13,7 +13,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.85);
 `
 
 export const Wrapper = styled.div`
@@ -22,6 +22,7 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   padding: 30px;
   background: ${COLOR.WHITE_COLOR};
+  box-shadow: rgba(0, 22, 103, 0.2) 0px 3px 10px;
 `
 
 export const Overlay = styled.div`

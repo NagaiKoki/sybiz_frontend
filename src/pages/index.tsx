@@ -1,11 +1,28 @@
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import Image from 'next/image'
 // import styles
 import { COLOR, FONT_SIZE } from '../../styles'
 // import components
 import Button from '../components/common/Button'
+// import selectors
+import { useSelectLoginUser } from '../selectors/public/user'
+// import dispatchers
+import { useUiDispatchers } from '../dispatchers/ui'
 
 const Index: React.FC = props => {
+  const router = useRouter()
+  const { toggleAuthModalOpen } = useUiDispatchers()
+  const loginUser = useSelectLoginUser()
+
+  useEffect(() => {
+    if (loginUser) {
+      toggleAuthModalOpen()
+      router.push({ pathname: '/users/[uid]', query: { uid: loginUser.userId } })
+    }
+  }, [loginUser])
+
   return (
     <Wrapper>
       <MainWrapper>
@@ -16,7 +33,7 @@ const Index: React.FC = props => {
           <Image src={'/top_image.png'} width={250} height={200} />
         </ImageWrapper>
         <ButtonWrapper>
-          <Button text="募集する" size="medium" onClick={() => {}} />
+          <Button text="募集する" size="medium" onClick={toggleAuthModalOpen} />
         </ButtonWrapper>
       </MainWrapper>
       <DescriptionWrapper>

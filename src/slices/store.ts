@@ -25,7 +25,7 @@ const rootReducer = combineReducers({
 })
 const sagaMiddleware = createSagaMiddleware()
 
-const middlewareList = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
+const middlewareList = [...getDefaultMiddleware({ thunk: false, serializableCheck: false }), sagaMiddleware];
 
 const store = configureStore({
   reducer: rootReducer,

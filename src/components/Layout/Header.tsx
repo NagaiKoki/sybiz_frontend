@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 // import styles
@@ -13,7 +14,11 @@ const Header: React.FC = () => {
   return (
     <Wrapper>
       <TitleWrapper>
-        <Title>Title</Title>
+        <Link href="/">
+          <a>
+            <Title>Title</Title>
+          </a>
+        </Link>
         <Button text="登録する" size="small" onClick={toggleAuthModalOpen} />
       </TitleWrapper>
     </Wrapper>
@@ -39,4 +44,5 @@ const TitleWrapper = styled.div`
 `
 
 const Title = styled.h1`
+  cursor: pointer;
 `

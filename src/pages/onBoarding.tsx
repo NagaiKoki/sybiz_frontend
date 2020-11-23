@@ -6,11 +6,14 @@ import { COLOR, FONT_SIZE } from '../../styles'
 // import components
 import Label from '../components/common/Label/InputLabel'
 import TextInput from '../components/common/Input/TextInput'
+// import selectors
+import { useSelectLoginUser } from '../selectors/public/user'
 
 const OnBoardingPage: React.FC = props => {
-  const [tempUserName, setTempUserName] = useState('')
-  const [tempUserId, setTempUserId] = useState('')
-
+  const loginUser = useSelectLoginUser()
+  const [tempUserName, setTempUserName] = useState(loginUser?.username || '')
+  const [tempUserId, setTempUserId] = useState(loginUser?.userId || '')
+  
   const handleOnChangeUserName = (value: string) => {
     setTempUserName(value)
   }
@@ -28,13 +31,13 @@ const OnBoardingPage: React.FC = props => {
       <FormWrapper>
         <Label text="ユーザー名" />
         <InputWrapper>
-          <TextInput value={tempUserName} placeholder="ユーザー名" onChange={handleOnChangeUserName} />
+          <TextInput value={tempUserName} defaultValue={tempUserName} placeholder="ユーザー名" onChange={handleOnChangeUserName} />
         </InputWrapper>
       </FormWrapper>
       <FormWrapper>
         <Label text="ユーザーID" />
         <InputWrapper>
-          <TextInput value={tempUserId} placeholder="ユーザーID" onChange={handleOnChangeUserId} />
+          <TextInput value={tempUserId} defaultValue={tempUserId} placeholder="ユーザーID" onChange={handleOnChangeUserId} />
         </InputWrapper>
       </FormWrapper>
     </Wrapper>

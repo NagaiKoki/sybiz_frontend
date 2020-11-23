@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { COLOR } from '../../../../styles'
+import { COLOR, FONT_SIZE } from '../../../../styles'
 
 type Props = {
   value: string
@@ -33,8 +33,14 @@ const Input = styled.input`
   border-bottom: 1px solid ${COLOR.BASE_BORDER_COLOR};
   width: 100%;
   padding: 10px;
+  color: ${COLOR.BASE_TEXT};
+  font-size: ${FONT_SIZE.BASE_TEXT_SIZE};
 
   &:hover {
    background: ${COLOR.MAIN_HOVER_COLOR};
+  }
+
+  &:focus {
+    border-bottom: 1px solid ${COLOR.MAIN_COLOR};
   }
 `

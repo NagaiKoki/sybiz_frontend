@@ -22,4 +22,5 @@ export default InputLabel
 const Label = styled.label<{ fontSize: number }>`
   color: ${COLOR.BASE_TEXT};
   font-size: ${props => `$${props.fontSize}px`};
+  font-weight: bold;
 `

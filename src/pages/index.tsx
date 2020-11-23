@@ -56,14 +56,12 @@ const Index: React.FC = props => {
 export default Index
 
 const Wrapper = styled.div`
-  box-shadow: ${COLOR.BOX_SHADOW_SIDE};
 `
 
 const MainWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 60px 0 30px;
 `
 
 const Title = styled.h2`

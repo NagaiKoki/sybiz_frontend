@@ -20,7 +20,6 @@ const TextInput: React.FC<Props> = props => {
     <Input
       value={value}
       placeholder={placeholder || ""}
-      defaultValue={defaultValue}
       onChange={handleOnChange}
     />
   )

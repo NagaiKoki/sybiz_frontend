@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
+// import apis
+import { requestFetchGetUser } from '../apis/public/user'
 // import styles
 import { COLOR, FONT_SIZE } from '../../styles'
 // import components
@@ -8,12 +10,26 @@ import Label from '../components/common/Label/InputLabel'
 import TextInput from '../components/common/Input/TextInput'
 // import selectors
 import { useSelectLoginUser } from '../selectors/public/user'
+// import config
+import firebase from '../config/firebase'
+
+export async function getServerSideProps() {
+  const uid = firebase.auth().currentUser.uid
+  const result = await requestFetchGetUser(uid)
+  console.log(result)
+  return {
+    props: {
+      user: JSON.stringify(result)
+    }
+  }
+}
 
 const OnBoardingPage: React.FC = props => {
+  console.log(firebase.auth().currentUser.uid)
   const loginUser = useSelectLoginUser()
   const [tempUserName, setTempUserName] = useState(loginUser?.username || '')
   const [tempUserId, setTempUserId] = useState(loginUser?.userId || '')
-  
+
   const handleOnChangeUserName = (value: string) => {
     setTempUserName(value)
   }
@@ -21,7 +37,7 @@ const OnBoardingPage: React.FC = props => {
   const handleOnChangeUserId = (value: string) => {
     setTempUserId(value)
   }
-  
+   
   return (
     <Wrapper>
       <Title>フクギョウへようこそ！</Title>
@@ -31,13 +47,13 @@ const OnBoardingPage: React.FC = props => {
       <FormWrapper>
         <Label text="ユーザー名" />
         <InputWrapper>
-          <TextInput value={tempUserName} defaultValue={tempUserName} placeholder="ユーザー名" onChange={handleOnChangeUserName} />
+          <TextInput value={tempUserName} placeholder="ユーザー名" onChange={handleOnChangeUserName} />
         </InputWrapper>
       </FormWrapper>
       <FormWrapper>
         <Label text="ユーザーID" />
         <InputWrapper>
-          <TextInput value={tempUserId} defaultValue={tempUserId} placeholder="ユーザーID" onChange={handleOnChangeUserId} />
+          <TextInput value={tempUserId} placeholder="ユーザーID" onChange={handleOnChangeUserId} />
         </InputWrapper>
       </FormWrapper>
     </Wrapper>

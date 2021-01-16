@@ -6,6 +6,7 @@ export interface PublicUserState {
 
 export type PublicUserType = {
   userId: string
+  firebaseUserId: string
   username: string
   providerId: string
   createdAt: Date

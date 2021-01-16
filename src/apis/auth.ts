@@ -14,13 +14,14 @@ export const requestFetchSignIn = async (type: SignInType) => {
     const user: PublicUserType = {
       username,
       userId: username,
+      firebaseUserId: result.user.uid,
       providerId,
       createdAt: new Date(),
       updatedAt: new Date()
     }
 
     if (isNewUser) {
-      await userRef.add(user)
+      await userRef.doc(result.user.uid).set(user)
     }
     return { payload: user }
   } catch(error) {

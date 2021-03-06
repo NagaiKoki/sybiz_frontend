@@ -1,5 +1,5 @@
-副業募集サービス「Fukugyo（仮）」
+# 副業募集サービス
 
-* next.js
-* typescript
-* firebase
+- Next.js
+- TypeScript
+- Firebase

@@ -6,7 +6,8 @@ import { AUTH } from '../constants/sliceName'
 
 const initialState: AuthState = {
   isLoggedIn: false,
-  error: ''
+  error: '',
+  isLoading: false
 }
 
 const authSlice = createSlice({
@@ -20,18 +21,23 @@ const authSlice = createSlice({
       }
     },
     requestSignIn: (state, action: PayloadAction<RequestSignInType>) => {
-      return state
+      return {
+        ...state,
+        isLoading: true
+      }
     },
     successSignIn: (state) => {
       return {
         ...state,
-        isLoggedIn: true
+        isLoggedIn: true,
+        isLoading: false
       }
     },
     failureSignIn: (state, action: PayloadAction<string>) => {
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
+        isLoading: false
       }
     }
   }
